@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Planejamento Estratégico COVEP</title>
+<meta name="description" content="Planejamento e monitoramento das ações estratégicas da Coordenação de Vigilância Epidemiológica – SVES/SEMUS São Luís.">
+<meta property="og:title" content="Planejamento Estratégico COVEP">
+<meta property="og:description" content="Ações, atividades e painel do Planejamento Estratégico – Vigilância Epidemiológica SVES/SEMUS">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://covep-sves.github.io/planejamento-covep/covep-compartilhamento.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="COVEP · SVES/SEMUS">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:url" content="https://covep-sves.github.io/planejamento-covep/">
+<link rel="icon" type="image/png" href="favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="PE COVEP">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#0B3F5F">
+<script>
+/* URL do app da Web do PE COVEP (Apps Script) */
+var APP = "https://script.google.com/macros/s/AKfycbzXJe9QwJEC2wBBe9-Uw2pf7itA9XOe5eAJzjlfHCRWm0omZxUVM6N_rXbpEEDii_VOZw/exec";
+(function () {
+  var instalado = window.navigator.standalone === true || (window.matchMedia && window.matchMedia("(display-mode: standalone)").matches) || /[?&]app=1/.test(location.search);
+  var celular = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  // Aberto pelo ícone da tela de início, ou no computador: segue direto para o aplicativo.
+  if (instalado) { location.replace(APP); return; }
+  if (!celular) { setTimeout(function () { location.replace(APP); }, 1200); }
+  window.__CELULAR = celular;
+})();
+</script>
+<style>
+:root{color-scheme:light}
+body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#EAF1F4;font:16px/1.5 Arial,sans-serif;color:#0B3F5F;text-align:center;padding:16px;box-sizing:border-box}
+.c{background:#fff;border-radius:16px;padding:28px 24px;max-width:380px;width:100%;box-shadow:0 4px 14px rgba(11,63,95,.08)}
+.barra{height:6px;margin:16px -24px;background:linear-gradient(90deg,#FCDF07 0 14.28%,#D1D330 0 28.57%,#B2CA52 0 42.85%,#92BE71 0 57.14%,#7CBA91 0 71.42%,#55AAAF 0 85.71%,#339ED6 0)}
+a.bt{display:inline-block;margin-top:8px;background:#2A7CBA;color:#fff;text-decoration:none;font-weight:700;padding:12px 20px;border-radius:10px}
+.dica{display:none;margin-top:18px;padding:12px 14px;background:#F3F7F9;border-radius:10px;font-size:14px;text-align:left;color:#1D2E39}
+.dica b{color:#0B3F5F}
+.dica ol{margin:6px 0 0;padding-left:20px}
+</style>
+</head>
+<body>
+<div class="c">
+  <img src="covep-sves.png" alt="Vigilância Epidemiológica – SVES/SEMUS" style="height:64px">
+  <div class="barra"></div>
+  <p id="msg">Abrindo o Planejamento Estratégico COVEP…<br><small>Entre com o e-mail da sua conta e a senha fornecida pela COVEP.</small></p>
+  <a class="bt" id="abrir" href="#">Abrir o aplicativo</a>
+  <div class="dica" id="ios"><b>Para ter o ícone no iPhone:</b><ol><li>Abra esta página no <b>Safari</b>.</li><li>Toque em <b>Compartilhar</b> (quadrado com seta para cima).</li><li>Escolha <b>Adicionar à Tela de Início</b> e toque em <b>Adicionar</b>.</li></ol></div>
+  <div class="dica" id="android"><b>Para ter o ícone no Android:</b><ol><li>Abra esta página no <b>Chrome</b>.</li><li>Toque no menu <b>⋮</b>.</li><li>Escolha <b>Adicionar à tela inicial</b> (ou <b>Instalar app</b>).</li></ol></div>
+</div>
+<script>
+document.getElementById("abrir").href = APP;
+if (window.__CELULAR) {
+  document.getElementById("msg").innerHTML = "Planejamento Estratégico COVEP<br><small>Entre com o e-mail da sua conta e a senha fornecida pela COVEP.</small>";
+  document.getElementById(/Android/i.test(navigator.userAgent) ? "android" : "ios").style.display = "block";
+}
+</script>
+</body>
+</html>
